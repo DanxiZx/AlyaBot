@@ -8,9 +8,9 @@ const defaultData = {
         botName: "𝑴𝑨𝑫𝑨𝑹𝑨-𝑼𝑪𝑯𝑰𝑯𝑨-𝑩𝑶𝑻 🩸",
         currency: "yenes",
         videos: [
-            "https://files.catbox.moe/b5n81s.mp4",
-            "https://files.catbox.moe/o9vzpe.mp4",
-            "https://files.catbox.moe/4qg0nz.mp4"
+            "https://files.catbox.moe/wp0tra.mp4",
+            "https://files.catbox.moe/wp0tra.mp4",
+            "https://files.catbox.moe/wp0tra.mp4"
         ]
     },
     global: {
