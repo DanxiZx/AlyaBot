@@ -9,7 +9,7 @@ import moment from 'moment-timezone'
 
 //---------[ Añada los numeros a ser Propietario/a ]---------
 
-global.owner = [['5212441357601', 'ＰＲＯＰＩＥＴＡＲＩＯ', true]]
+global.owner = [['18093978365', 'ＰＲＯＰＩＥＴＡＲＩＯ', true]]
 global.lidOwners = [['+128514011471987']] // Nota: esta configuracion es para que el bot reconozca a los owners en los grupos, si no quieres que el bot reconozca a los owners en los grupos, simplemente deja el array vacío: global.lidOwners = []
 global.mods = []
 global.prems = []
@@ -71,17 +71,17 @@ global.moment = moment
 
 //------------------------[ Stickers ]-----------------------------
 
-global.packname = 'AlyaBot'
-global.author = 'Emma (Violets Version)'
+global.packname = '𝙼𝙰𝙳𝙰𝚁𝙰-𝚂𝚃𝙺'
+global.author = '𝚄𝚉𝙸𝙳𝙰𝙽𝙸𝚇𝚂'
 
 //------------[ Versión | Nombre  ]------------
 
 // Cambia por el nombre de tu bot
 
-global.wm = 'AlyaBot' 
-global.botname = 'AlyaBot'
-global.vs = '2.2.1'
-global.dev = 'Emma (Violets Version)'
+global.wm = '𝐌𝐚𝐝𝐚𝐫𝐚-𝐛𝐨𝐭' 
+global.botname = '𝗠𝗔𝗗𝗔𝗥𝗔-𝗕𝗢𝗧'
+global.vs = '3.3.0'
+global.dev = 'ᴍᴜʟᴛɪ-ʙᴏᴛs-ᴡʜᴀᴛsᴀᴘᴘ ᴘʀᴏʏᴇᴄᴛ'
 global.copy = '© 2025'
 
 //----------------------------[ NIVELES | RPG ]---------------------------------
@@ -92,10 +92,10 @@ global.maxwarn = '4' // máxima advertencias
 //━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
 global.rwait = '⌛'
-global.dmoji = '🤭'
+global.dmoji = '🩸'
 global.done = '✅'
 global.error = '❌' 
-global.xmoji = '🔥' 
+global.xmoji = '🫣' 
 
 //━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
