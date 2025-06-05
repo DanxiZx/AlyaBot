@@ -9,8 +9,8 @@ const defaultData = {
         currency: "yenes",
         videos: [
             "https://files.catbox.moe/wp0tra.mp4",
-            "https://files.catbox.moe/wp0tra.mp4",
-            "https://files.catbox.moe/wp0tra.mp4"
+            "https://files.catbox.moe/3qeiq0.mp4",
+            "https://files.catbox.moe/wqdng2.mp4"
         ]
     },
     global: {
