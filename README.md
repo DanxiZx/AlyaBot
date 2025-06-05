@@ -1,4 +1,4 @@
-﻿<h1 align="center">📍 𝗠𝗔𝗗𝗔𝗥𝗔-𝗕𝗢𝗧 📍</h1>  
+﻿<h1 align="center">🩸 𝗠𝗔𝗗𝗔𝗥𝗔-𝗕𝗢𝗧 🩸</h1>  
 <p align="center"><i>𝙎𝙪𝙥𝙚𝙧 𝘽𝙤𝙩 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥 𝘾𝙤𝙣 𝙈𝙪𝙡𝙩𝙞-𝙁𝙤𝙣𝙘𝙞𝙤𝙣𝙚𝙨 𝙋𝙖𝙧𝙖 𝙏𝙞</i></p>
 
 <p align="center">
@@ -6,17 +6,20 @@
 </p>
 
 
-### 📱 Android (Termux)
+### ⚙️ Android (Termux)
 
 > 📲 Ideal para ejecutar el bot en dispositivos móviles. Copia y pega los comandos uno por uno
 
 ```bash
-pkg update && pkg upgrade
-pkg install git nodejs ffmpeg imagemagick -y
-git clone https://github.com/Elpapiema/AlyaBot_MD
-cd AlyaBot_MD
-npm install
-npm start
+> pkg update && pkg upgrade
+> pkg install git nodejs ffmpeg imagemagick -y
+> git clone https://github.com/DanxiZx/Madara-Bot
+> cd Madara-bot
+> npm install
+> node index.js
 ```
-𝙀𝙨𝙩𝙚 𝘽𝙤𝙩 𝙀𝙨 𝙇𝙖 𝙉𝙪𝙚𝙫𝙖 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 𝘿𝙚 𝙎𝙝𝙖𝙣𝙠𝙨𝙪-𝙗𝙤𝙩 
-𝙑𝙚𝙧𝙨𝙞𝙤𝙣 3.3.0
+> 𝙲𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚞𝚗𝚘𝚜 𝚙𝚘𝚛 𝚞𝚗𝚘 🩸
+
+
+𝙀𝙨𝙩𝙚 𝘽𝙤𝙩 𝙀𝙨 𝙇𝙖 𝙉𝙪𝙚𝙫𝙖 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 𝘿𝙚 𝙎𝙝𝙖𝙣𝙠𝙨𝙪-𝙗𝙤𝙩 🩸
+𝙑𝙚𝙧𝙨𝙞𝙤𝙣 3.3.0 ❤️
