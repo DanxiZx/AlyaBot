@@ -20,5 +20,5 @@ let handler = async (m, { text }) => {
 handler.help = ['setname <nombre>'];
 handler.tags = ['config'];
 handler.command = /^setname$/i;
-
+handler.owner = true; // Solo el owner puede usar este comando
 export default handler;
