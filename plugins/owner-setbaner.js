@@ -20,5 +20,5 @@ let handler = async (m, { text }) => {
 handler.help = ['setbanner <link>'];
 handler.tags = ['config'];
 handler.command = /^setbanner$/i;
-
+handler.owner = true; // Solo el owner puede usar este comando
 export default handler;
