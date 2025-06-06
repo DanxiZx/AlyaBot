@@ -13,7 +13,7 @@
 ```bash
 > pkg update && pkg upgrade
 > pkg install git nodejs ffmpeg imagemagick -y
-> git clone https
+> git clone https://github.com/DanxiZx/madaraBot
 > cd madaraBot
 > npm install
 > node index.js
