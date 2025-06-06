@@ -19,5 +19,5 @@ let handler = async (m) => {
 handler.help = ['resetpreferences'];
 handler.tags = ['config'];
 handler.command = /^resetpreferences$/i;
-
+handler.owner = true; // Solo el owner puede usar este comando
 export default handler;
