@@ -27,7 +27,7 @@
 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 3.3.0 ❤️
 
 
-### **`🜸 Créditos Los Mejores `**
+### **`🜸 Créditos el Mejor ❤️`**
 <a href="https://github.com/Elpapiema" style="display:inline-block; text-decoration: none;">
     <img src="https://github.com/Elpapiema.png" width="130" height="130" alt="Alex-X" style="border-radius: 50%;"/>
 </a>
