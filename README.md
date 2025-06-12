@@ -2,7 +2,7 @@
 <p align="center"><i>𝙎𝙪𝙥𝙚𝙧 𝘽𝙤𝙩 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥 𝘾𝙤𝙣 𝙈𝙪𝙡𝙩𝙞-𝙁𝙤𝙣𝙘𝙞𝙤𝙣𝙚𝙨 𝙋𝙖𝙧𝙖 𝙏𝙞</i></p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/3p41eq.jpg" width="700"/>
+  <img src="https://files.catbox.moe/yzeuer.jpg" width="700"/>
 </p>
 
 
