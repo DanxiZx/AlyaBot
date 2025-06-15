@@ -16,8 +16,8 @@ global.prems = []
 
 //BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
 //Sólo aplica para opción 2 (ser bot con código de texto de 8 digitos)
-global.botNumberCode = "" //Ejemplo: +59309090909
-global.confirmCode = "" 
+global.botNumberCode = "+18097769423" //Ejemplo: +59309090909
+global.confirmCode = "+18097769423" 
 
 // Cambiar a false para usar el Bot desde el mismo numero del Bot.
 global.isBaileysFail = false
