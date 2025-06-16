@@ -16,8 +16,8 @@ global.prems = []
 
 //BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
 //Sólo aplica para opción 2 (ser bot con código de texto de 8 digitos)
-global.botNumberCode = "+18097769423" //Ejemplo: +59309090909
-global.confirmCode = "+18097769423" 
+global.botNumberCode = "" //Ejemplo: +59309090909
+global.confirmCode = "" 
 
 // Cambiar a false para usar el Bot desde el mismo numero del Bot.
 global.isBaileysFail = false
@@ -71,18 +71,18 @@ global.moment = moment
 
 //------------------------[ Stickers ]-----------------------------
 
-global.packname = '𝙼𝙰𝙳𝙰𝚁𝙰-𝚂𝚃𝙺'
-global.author = '𝚄𝚉𝙸𝙳𝙰𝙽𝙸𝚇𝚂'
+global.packname = '𝙰𝙻𝚈𝙰-𝚂𝚃𝙺 💗'
+global.author = '𝙴𝚁𝙴𝙽𝚇𝚂-𝚅𝙴𝚁𝚂𝙸𝙾𝙽'
 
 //------------[ Versión | Nombre  ]------------
 
 // Cambia por el nombre de tu bot
 
-global.wm = '𝐌𝐚𝐝𝐚𝐫𝐚-𝐛𝐨𝐭' 
-global.botname = '𝗠𝗔𝗗𝗔𝗥𝗔-𝗕𝗢𝗧'
+global.wm = '𝐀𝐋𝐘𝐀𝐊𝐔𝐉𝐎𝐔-𝐁𝐎𝐓' 
+global.botname = '𝗔𝗟𝗬𝗔𝗞𝗨𝗝𝗢𝗨-𝗕𝗢𝗧'
 global.vs = '3.3.0'
-global.dev = 'ᴍᴜʟᴛɪ-ʙᴏᴛs-ᴡʜᴀᴛsᴀᴘᴘ ᴘʀᴏʏᴇᴄᴛ'
-global.copy = '© 2025'
+global.dev = 'ᴇᴄʜᴏ ᴘᴏʀ | ᴇʀᴇɴxs-ᴠᴇʀsɪᴏɴ'
+global.copy = '⍟ 2025'
 
 //----------------------------[ NIVELES | RPG ]---------------------------------
 
@@ -92,7 +92,7 @@ global.maxwarn = '4' // máxima advertencias
 //━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
 global.rwait = '⌛'
-global.dmoji = '🩸'
+global.dmoji = '💗'
 global.done = '✅'
 global.error = '❌' 
 global.xmoji = '🫣' 
