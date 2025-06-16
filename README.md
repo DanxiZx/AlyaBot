@@ -2,7 +2,7 @@
 <p align="center"><i>𝑺𝑼𝑷𝑬𝑹 𝑩𝑶𝑻 𝑺𝑰𝑴𝑷𝑳𝑬 𝑷𝑨𝑹𝑨 𝑻𝑰 🩷</i></p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/yzeuer.jpg" width="700"/>
+  <img src="https://files.catbox.moe/ns3ood.jpg" width="700"/>
 </p>
 
 
