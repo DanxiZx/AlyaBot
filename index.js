@@ -1,4 +1,4 @@
-console.log('Vamos A Iniciar Brot 🚀') 
+console.log('Vamos A Iniciar 🌟') 
 import { join, dirname } from 'path'
 import { createRequire } from 'module'
 import { fileURLToPath } from 'url'
@@ -14,7 +14,7 @@ const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
  
 // CAmbia porel Nombre de tu bot
-say('Madara-Bot', {
+say('AlyaKujouBot', {
 font: 'chrome',
 align: 'center',
 gradient: ['red', 'magenta']})
