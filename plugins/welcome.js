@@ -27,7 +27,7 @@ export async function before(m, { conn, groupMetadata }) {
   let descs = groupMetadata.desc || "*Descripción predeterminada del grupo*"; // Descripción del grupo
 
   // Generar imagen con la API
-  let welcomeImageUrl = `https://api.siputzx.my.id/api/canvas/welcomev2?username=${encodeURIComponent(usuario)}&memberCount=6&avatar=${encodeURIComponent(uploadedImageUrl)}&background=https://files.catbox.moe/ei4p4u.jpg`;
+  let welcomeImageUrl = `https://api.siputzx.my.id/api/canvas/welcomev2?username=${encodeURIComponent(usuario)}&memberCount=6&avatar=${encodeURIComponent(uploadedImageUrl)}&background=https://files.catbox.moe/41ukry.jpg`;
 
   // Mensaje de bienvenida personalizado
   if (m.messageStubType == 27) { // Evento de entrada al grupo
@@ -94,7 +94,7 @@ export async function before(m, { conn, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return;
 
   // Obtener la foto de perfil del usuario
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/yzeuer.jpg');
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/41ukry.jpg');
   let img = await (await fetch(pp)).buffer();
 
   // Obtener el nombre del usuario
