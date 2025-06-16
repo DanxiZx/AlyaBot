@@ -8,9 +8,9 @@ const defaultData = {
         botName: "𝘼𝙡𝙮𝙖𝙆𝙪𝙟𝙤𝙪-𝘽𝙤𝙩 💗",
         currency: "yenes",
         videos: [
-            "https://files.catbox.moe/st56nf.mp4",
+            "https://files.catbox.moe/o62f8z.mp4",
             "https://files.catbox.moe/uh9xha.mp4",
-            "https://files.catbox.moe/o62f8z.mp4"
+            "https://files.catbox.moe/st56nf.mp4"
         ]
     },
     global: {
