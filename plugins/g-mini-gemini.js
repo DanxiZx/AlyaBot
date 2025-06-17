@@ -1,10 +1,8 @@
-*IA que puede observar imágenes y dar un descripción de la imagen además de responder preguntas XD*
+Este es el módulo *completo y correcto* que debes pegar en tu archivo `g-mini-gemini.js` dentro de `/plugins`:
 
-
-//código y API desarrollada por
-// Https://github.com/deylin-eliac
-// No quites créditos
-
+```js
+// Código y API desarrollada por https://github.com/deylin-eliac
+// No quitar créditos
 
 import fetch from 'node-fetch'
 import { downloadContentFromMessage } from '@whiskeysockets/baileys'
@@ -12,10 +10,10 @@ import { downloadContentFromMessage } from '@whiskeysockets/baileys'
 let handler = async (m, { text, usedPrefix, command }) => {
   let q = m.quoted || m
   let mime = (q.msg || q).mimetype || ''
-  let hasImage = /^image\/(jpe?g|png)$/.test(mime)
+  let hasImage = /^image\/(jpe?g|png)/.test(mime)
 
-  if (!text && !hasImage) {
-    return conn.reply(m.chat, `💡 Envía o responde a una imagen con una pregunta.\n\nEjemplo:\n${usedPrefix + command} ¿Qué ves en esta imagen?`, m)
+  if (!text        !hasImage) 
+    return conn.reply(m.chat, `💡 Envía o responde a una imagen con una pregunta.:{usedPrefix + command} ¿Qué ves en esta imagen?`, m)
   }
 
   try {
@@ -32,7 +30,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
         buffer = Buffer.concat([buffer, chunk])
       }
 
-      base64Image = `data:${mime};base64,${buffer.toString('base64')}`
+      base64Image = `data:mime;base64,{buffer.toString('base64')}`
       mimeType = mime
     }
 
@@ -42,8 +40,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
       mimeTypes: mimeType ? [mimeType] : [],
       temperature: 0.7
     }
-
-    const res = await fetch('https://g-mini-ia.vercel.app/api/gemini', {
+const res = await fetch('https://g-mini-ia.vercel.app/api/gemini', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -52,8 +49,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
     })
 
     const data = await res.json()
-
     const respuesta = data?.candidates?.[0]?.content?.parts?.[0]?.text
+
     if (!respuesta) throw '❌ No se recibió respuesta válida de la IA.'
 
     await m.reply(respuesta.trim())
