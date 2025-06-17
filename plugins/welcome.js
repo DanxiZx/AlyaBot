@@ -94,7 +94,7 @@ export async function before(m, { conn, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return;
 
   // Obtener la foto de perfil del usuario
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/41ukry.jpg');
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/a5hq0g.jpg');
   let img = await (await fetch(pp)).buffer();
 
   // Obtener el nombre del usuario
