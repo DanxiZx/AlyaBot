@@ -28,7 +28,6 @@ const handler = async (m, {conn, text, usedPrefix, command, args}) => {
   }
 };
 handler.command = ['hentaipdf'];
-handler.register = true;
 handler.group = true;
 export default handler;
 async function nhentaiScraper(id) {
