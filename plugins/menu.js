@@ -60,6 +60,7 @@ let handler = async (m, { conn }) => {
 │❀ .addrw 📝
 │❀ .alya ➩ .bot 🤖
 │❀ .kaori ❤️
+│❀ .Waifu 👄
 ╚════ ≪ 🎲 ≫ ════╝
 
 ╔════ ≪ 🔄 ≫ ════╗
