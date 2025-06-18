@@ -6,8 +6,7 @@ const {
 } = (await import("@whiskeysockets/baileys"))["default"];
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, "❀ 𝐏𝐨𝐫𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐠𝐫𝐞𝐬𝐚 𝐋𝐨 𝐐𝐮𝐞 𝐐𝐮𝐢𝐞𝐫𝐞𝐬 𝐁𝐮𝐬𝐜𝐚𝐫 𝐞𝐧 𝐏𝐢𝐧𝐭𝐞𝐫𝐞𝐬𝐭 🔍
-Ejemplo: > .𝙿𝚒𝚗𝚝𝚎𝚛𝚎𝚜𝚝 𝙰𝚕𝚢𝚊 ", m);
+  if (!text) return conn.reply(m.chat, "❀ 𝐏𝐨𝐫𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐠𝐫𝐞𝐬𝐚 𝐋𝐨 𝐐𝐮𝐞 𝐐𝐮𝐢𝐞𝐫𝐞𝐬 𝐁𝐮𝐬𝐜𝐚𝐫 𝐞𝐧 𝐏𝐢𝐧𝐭𝐞𝐫𝐞𝐬𝐭 🔍", m);
   let query = text + " ʜᴅ";
   await m.react("⏳");
   conn.reply(m.chat, '💛 𝑬𝒔𝒑𝒆𝒓𝒂 𝒖𝒏 𝒎𝒐𝒎𝒆𝒏𝒕𝒐 𝒆𝒔𝒕𝒐𝒚 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒏𝒅𝒐 𝑻𝒖𝒔 𝑰𝒎𝒂𝒈𝒆𝒏 ⭐...', m);
