@@ -38,7 +38,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         message: {
           messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-            body: proto.Message.InteractiveMessage.Body.create({ text: `🍭 Resultado de: ${query}` }),
+            body: proto.Message.InteractiveMessage.Body.create({ text: `📄 ʀᴇsᴜʟᴛᴀᴅᴏ ᴅᴇ : ${query}` }),
             footer: proto.Message.InteractiveMessage.Footer.create({ text: "𝙋𝙄𝙉𝙏𝙀𝙍𝙀𝙎𝙏 𝙃𝘿 𝘽𝙔 𝘼𝙇𝙔𝘼𝙆𝙊𝙐𝙅𝙊𝙐-𝘽𝙊𝙏" }),
             header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
             carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards })
