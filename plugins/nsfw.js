@@ -55,7 +55,7 @@ const handler = async (m, {conn, command, usedPrefix}) => {
       const url4 = await videosxxxc[Math.floor(Math.random() * videosxxxc.length)];
    await conn.sendMessage(m.chat, { 
         video: { url: url4 },
-        caption: `*ᴅɪsғʀᴜᴛᴀ ᴅᴇʟ ᴠɪᴅᴇᴏ 🥵*`, 
+        caption: `*𝘿𝙄𝙎𝙁𝙍𝙐𝙏𝘼 𝘿𝙀 𝙏𝙐 𝙑𝙄𝘿𝙀𝙊 𝙋𝘼𝙅𝙀𝙍𝙊 🙈👅💋*`, 
         footer: dev, 
         buttons: [
             {
@@ -71,7 +71,7 @@ const handler = async (m, {conn, command, usedPrefix}) => {
       const url5 = await videosxxxc2[Math.floor(Math.random() * videosxxxc2.length)];
    await conn.sendMessage(m.chat, { 
         video: { url: url5 },
-        caption: `*ᴅɪsғʀᴜᴛᴀ ᴅᴇʟ ᴠɪᴅᴇᴏ 🥵*`, 
+        caption: `*𝘿𝙄𝙎𝙁𝙍𝙏𝘼 𝘿𝙀 𝙏𝙐 𝙑𝙄𝘿𝙀𝙊 𝙋𝘼𝙅𝙀𝙍𝙊 🙈👅💋*`, 
         footer: dev, 
         buttons: [
             {
