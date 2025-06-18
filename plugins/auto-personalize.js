@@ -6,7 +6,7 @@ const filePath = './personalize.json';
 const defaultData = {
     default: {
         botName: "𝘼𝙡𝙮𝙖𝙆𝙪𝙟𝙤𝙪𝘽𝙤𝙩💗",
-        currency: "yenes",
+        currency: "𝙔𝙚𝙣𝙚𝙨💴",
         videos: [
             "https://files.catbox.moe/2y26pq.mp4",
             "https://files.catbox.moe/2y26pq.mp4",
