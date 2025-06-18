@@ -1,32 +1,64 @@
+import translate from '@vitalets/google-translate-api'
 import fetch from 'node-fetch'
-
-var handler = async (m, { conn, usedPrefix, command, text }) => {
-
-if (!text) return conn.reply(m.chat, `🍫 *Ingrese el nombre de algun anime*\n\nEjemplo, ${usedPrefix + command} Ai Yaemori`, m, rcanal)
-let res = await fetch('https://api.jikan.moe/v4/manga?q=' + text)
-if (!res.ok) return conn.reply(m.chat, `🚩 *Ocurrió un fallo*`, m, rcanal)
-
+import * as cheerio from 'cheerio'
+let handler = async (m, { conn, text }) => {
+    let resp, imagen
+if (!text) {resp = `*[❗INFO❗] INGRESE EL NOMBRE DE ALGUN ANIME QUE DESEE BUSCAR*`}
+try {
+let res = await fetch(global.API('https://api.jikan.moe', '/v4/search/anime', { q: text }))
+if (!res.ok) {resp = await res.text()}
 let json = await res.json()
-let { chapters, title_japanese, url, type, score, members, background, status, volumes, synopsis, favorites } = json.data[0]
-let author = json.data[0].authors[0].name
-let animeingfo = `🍟 Título: ${title_japanese}
-🚩 Capítulo: ${chapters}
-💫 Transmisión: ${type}
-🗂 Estado: ${status}
-🗃 Volumes: ${volumes}
-🌟 Favorito: ${favorites}
-🧮 Puntaje: ${score}
-👥 Miembros: ${members}
-🔗 Url: ${url}
-👨‍🔬 Autor: ${author}
-📝 Fondo: ${background}
-💬 Sinopsis: ${synopsis}
- ` 
-conn.sendFile(m.chat, json.data[0].images.jpg.image_url, 'anjime.jpg', '      🚩 *I N F O - A N I M E* 🚩\n\n' + animeingfo, fkontak, m)
-
-} 
-handler.help = ['infoanime'] 
-handler.tags = ['buscador'] 
-handler.command = ['infoanime', 'animeinfo'] 
-
+let { title, members, synopsis, episodes, url, rated, score, image_url, type, start_date, end_date, mal_id } = json.results[0]
+let res2 = await fetch(`https://myanimelist.net/anime/${mal_id}`)
+if (!res2.ok) {resp = await res2.text()}
+let html = await res2.text()
+const tld = 'cn'
+let resultes = await translate(`${synopsis}`, { to: 'es', autoCorrect: true })
+resp = `✨ *Titulo:* ${title}
+🎆 *Episodios:* ${episodes}
+💬 *Transmitido en:* ${type}
+💌 *Rating:* ${rated}
+❤️ *Score:* ${score}
+👥 *Miembros:* ${members}
+💚 *Sinopsis:* ${resultes.text}
+🌐 *URL*: ${url}`
+imagen = image_url
+} catch {    
+let res = await fetch(global.API('https://api.jikan.moe', '/v4/search/anime', { q: text }))
+if (!res.ok) {resp = await res.text()}
+let json = await res.json()
+let { title, members, synopsis, episodes, url, rated, score, image_url, type, start_date, end_date, mal_id } = json.results[0]
+let res2 = await fetch(`https://myanimelist.net/anime/${mal_id}`)
+if (!res2.ok) {resp = await res2.text()}
+let html = await res2.text()
+resp = `✨ *Titulo:* ${title}
+🎆 *Episodios:* ${episodes}
+💬 *Transmitido en:* ${type}
+💌 *Rating:* ${rated}
+❤️ *Score:* ${score}
+👥 *Miembros:* ${members}
+💚 *Sinopsis:* ${synopsis}
+🌐 *URL*: ${url}`
+imagen = image_url
+}
+let txt = '';
+let count = 0;
+for (const c of resp) {
+await new Promise(resolve => setTimeout(resolve, 1));
+txt += c;
+count++;
+if (count % 10 === 0) {
+await conn.sendPresenceUpdate('composing' , m.chat);
+}
+}
+if (!imagen) {
+await conn.sendMessage(m.chat, { text: txt.trim(), mentions: conn.parseMention(txt) }, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
+}
+if (imagen && resp) {
+await conn.sendMessage(m.chat, { image: {url: imagen}, caption: txt.trim(), mentions: conn.parseMention(txt) }, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100});  
+}
+}
+handler.help = ['animeinfo <anime>']
+handler.tags = ['internet']
+handler.command = /^(animeinfo)$/i
 export default handler
