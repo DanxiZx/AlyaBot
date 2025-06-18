@@ -6,10 +6,10 @@ const {
 } = (await import("@whiskeysockets/baileys"))["default"];
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, "🍬 Por favor, ingresa lo que deseas buscar en Pinterest.", m);
+  if (!text) return conn.reply(m.chat, "𝙥𝙤𝙧𝙛𝙖𝙫𝙤𝙧 𝙞𝙣𝙜𝙧𝙚𝙨𝙖 𝙡𝙤 𝙦𝙪𝙚 𝙦𝙪𝙞𝙚𝙧𝙚𝙨 𝙗𝙪𝙨𝙘𝙖𝙧 𝙚𝙣 𝙥𝙞𝙣𝙩𝙚𝙧𝙚𝙨𝙩 🔍.", m);
   let query = text + " hd";
   await m.react("⏳");
-  conn.reply(m.chat, '🍭 Descargando imágenes, espere un momento...', m);
+  conn.reply(m.chat, '💛 𝑬𝒔𝒑𝒆𝒓𝒂 𝒖𝒏 𝒎𝒐𝒎𝒆𝒏𝒕𝒐 𝒆𝒔𝒕𝒐𝒚 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒏𝒅𝒐 𝑻𝒖𝒔 𝑰𝒎𝒂𝒈𝒆𝒏 ⭐...', m);
   try {
     let { data } = await axios.get(`https://api.dorratz.com/v2/pinterest?q=${encodeURIComponent(query)}`);
     let images = data.slice(0, 6).map(item => item.image_large_url);
@@ -39,7 +39,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
           messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: proto.Message.InteractiveMessage.Body.create({ text: `🍭 Resultado de: ${query}` }),
-            footer: proto.Message.InteractiveMessage.Footer.create({ text: "⪛✰ Pinterest HD - Búsquedas ✰⪜" }),
+            footer: proto.Message.InteractiveMessage.Footer.create({ text: "𝙋𝙄𝙉𝙏𝙀𝙍𝙀𝙎𝙏 𝙃𝘿 𝘽𝙔 𝘼𝙇𝙔𝘼𝙆𝙊𝙐𝙅𝙊𝙐-𝘽𝙊𝙏" }),
             header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
             carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards })
           })
