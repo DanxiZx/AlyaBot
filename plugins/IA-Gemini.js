@@ -19,7 +19,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 
   try {
-    await m.react('🌟')
+    await m.react('🔍')
     conn.sendPresenceUpdate('composing', m.chat)
 
     let base64Image = null
