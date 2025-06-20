@@ -8,7 +8,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text.trim()) {
       return conn.reply(m.chat, `❀ Por favor, ingresa el nombre de la música a descargar.`, m)
     }
-  
+
 let videoIdToFind = text.match(youtubeRegexID) || null
 let ytplay2 = await yts(videoIdToFind === null ? text : 'https://youtu.be/' + videoIdToFind[1])
 
@@ -30,7 +30,7 @@ url = url || 'no encontrado'
 author = author || 'no encontrado'
     const vistas = formatViews(views)
     const canal = author.name ? author.name : 'Desconocido'
-    const infoMessage = `「✦」Descargando *<${title || 'Desconocido'}>*\n\n> ✧ Canal » *${canal}*\n> ✰ Vistas » *${vistas || 'Desconocido'}*\n> ⴵ Duración » *${timestamp || 'Desconocido'}*\n> ✐ Publicado » *${ago || 'Desconocido'}*\n> 🜸 Link » ${url}`
+    const infoMessage = `「🕒」Descargando *<${title || 'Desconocido'}>*\n\n> ✧ Canal » *${canal}*\n> 👀 Vistas » *${vistas || 'Desconocido'}*\n> ⏳ Duración » *${timestamp || 'Desconocido'}*\n> 📍 Publicado » *${ago || 'Desconocido'}*\n> 🔗 Link » ${url}`
     const thumb = (await conn.getFile(thumbnail))?.data
     const JT = {
       contextInfo: {
@@ -55,7 +55,7 @@ author = author || 'no encontrado'
         if (!result) throw new Error('⚠ El enlace de audio no se generó correctamente.')
         await conn.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.result.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m })
       } catch (e) {
-        return conn.reply(m.chat, '⚠︎ No se pudo enviar el audio. Esto puede deberse a que el archivo es demasiado pesado o a un error en la generación de la URL. Por favor, intenta nuevamente más tarde.', m)
+        return conn.reply(m.chat, '⚠️ No se pudo enviar el audio. Esto puede deberse a que el archivo es demasiado pesado o a un error en la generación de la URL. Por favor, intenta nuevamente más tarde.', m)
       }
     } else if (command === 'play2' || command === 'ytv' || command === 'ytmp4' || command === 'mp4') {
       try {
@@ -69,7 +69,7 @@ author = author || 'no encontrado'
       return conn.reply(m.chat, '✧︎ Comando no reconocido.', m)
     }
   } catch (error) {
-    return m.reply(`⚠︎ Ocurrió un error: ${error}`)
+    return m.reply(`⚠️ Ocurrió un error: ${error}`)
   }
 }
 handler.command = handler.help = ['play', 'yta', 'ytmp3', 'play2', 'ytv', 'ytmp4', 'playaudio', 'mp4']
