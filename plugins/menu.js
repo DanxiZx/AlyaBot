@@ -65,11 +65,10 @@ let handler = async (m, { conn }) => {
 
 ╔════ ≪ 🔄 ≫ ════╗
 │ 📥 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎 📥
-│❀ .play ➩ nombre de la canción 🎶 (audio)
-│❀ .play2 ➩ nombre de la canción 🎥 (video)
+│❀ .playaudio ➩ (audio)🎶
+│❀ .ytmp4 ➩ (video)🎬
 │❀ .tt ➩ .tiktok ➩ enlace de TikTok 🎞️
-│❀ .sp ➩ .Spotify enlace de Spotify 🎼
-│❀ .fb ➩ link de facebook 🎥 (video)
+│❀ .sp ➩ .Spotify enlace de Spotify 🎶
 ╚════ ≪ 🔄 ≫ ════╝
 
 ╔════ ≪ 🎰 ≫ ════╗
