@@ -10,7 +10,7 @@ const defaultData = {
         videos: [
             "https://files.catbox.moe/2y26pq.mp4",
             "https://files.catbox.moe/2y26pq.mp4",
-            ""https://files.catbox.moe/2y26pq.mp4"
+            "https://files.catbox.moe/2y26pq.mp4"
         ]
     },
     global: {
