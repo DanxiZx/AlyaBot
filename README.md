@@ -14,7 +14,7 @@
 > pkg update && pkg upgrade
 > pkg install git nodejs ffmpeg imagemagick -y
 > git clone https://github.com/DanxiZx/AlyaKujou-bot
-> cd AlyaKujou-bot 
+> cd AlyaKujouBot 
 > npm install
 > node index.js
 ```
