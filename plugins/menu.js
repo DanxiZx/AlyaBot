@@ -26,7 +26,7 @@ let handler = async (m, { conn }) => {
 
 💬¡Hola ! Soy ${botName}, aquí tienes la lista de comandos¡!
 💰 Moneda actual: ¥ ${currency}
-> Más Información https://erenxsofc01.hellofigwebsite.com/
+> Más Información erenxsit.vercel.app
 
 ╔════ ≪ ⭐ ≫ ════╗
 │ 𝙎𝙊𝙇𝙊 𝙋𝘼𝙍𝘼 𝘾𝙍𝙀𝘼𝘿𝙊𝙍 ⭐ 
