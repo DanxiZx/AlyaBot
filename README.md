@@ -11,12 +11,14 @@
 > 💥 Ideal para ejecutar el bot en dispositivos móviles. Copia y pega los comandos uno por uno
 
 ```bash
-> pkg update && pkg upgrade
-> pkg install git nodejs ffmpeg imagemagick -y
-> git clone https://github.com/DanxiZx/AlyaKoujouBot
-> cd AlyaKoujouBot 
-> npm install
-> node index.js
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+ pkg update && pkg upgrade
+ pkg install git nodejs ffmpeg imagemagick -y
+ git clone https://github.com/DanxiZx/AlyaKoujouBot
+ cd AlyaKoujouBot 
+ npm install
+ node index.js
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 > ‼️ 𝘐𝘯𝘧𝘰𝘳𝘮𝘢𝘤𝘪𝘰𝘯 𝘐𝘮𝘱𝘰𝘳𝘵𝘢𝘯𝘵𝘦 𝘗𝘢𝘳𝘢 𝘛𝘰𝘥𝘰 𝘭𝘢 𝘉𝘰𝘵 𝘕𝘰 𝘦𝘴 𝘍𝘰𝘯𝘤𝘪𝘰𝘯𝘢𝘭 𝘢𝘭 100 𝘦𝘯 𝘵𝘦𝘳𝘮𝘶𝘹 𝘱𝘶𝘦𝘥𝘦 𝘴𝘦𝘳 𝘲𝘶𝘦 𝘦𝘴𝘵𝘦 𝘱𝘰𝘤𝘰 𝘭𝘦𝘯𝘵𝘢 𝘺 𝘲𝘶𝘦 𝘵𝘢𝘮𝘣𝘪𝘦𝘯 𝘯𝘰 𝘳𝘦𝘴𝘱𝘰𝘯𝘥𝘢 𝘢𝘭𝘨𝘶𝘯𝘰𝘴 𝘤𝘰𝘮𝘢𝘯𝘥𝘰 𝘳𝘢𝘱𝘪𝘥𝘰 
 
