@@ -60,6 +60,7 @@ let handler = async (m, { conn }) => {
 ║ 🌸 .kaori — Estilo waifu
 ║ 🩷 .Waifu — Imagen Waifu
 ║ 💬 .fakengl — Texto Fake
+║ 🍟 .lolice  – imagen Fake
 ╚══════════════════════╝
 
 ╔═══[ 📥 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎 ]═══╗
