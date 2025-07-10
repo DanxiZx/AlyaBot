@@ -94,7 +94,7 @@ export async function before(m, { conn, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return;
 
   // Obtener la foto de perfil del usuario
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/a5hq0g.jpg');
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/rblv23.jpg');
   let img = await (await fetch(pp)).buffer();
 
   // Obtener el nombre del usuario
@@ -110,7 +110,7 @@ export async function before(m, { conn, groupMetadata }) {
 ┏━━━━━❖━━━✦━━━❖━━━━━┓
 ┃  💗 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎/𝐀 ✨
 ┗━━━━━❖━━━✦━━━❖━━━━━┛
-
+╔═════════════════════════════╗
 💗 Hola ${usuario}~
 🌷 Bienvenido/a a *『${subject}』*
 
@@ -125,7 +125,7 @@ export async function before(m, { conn, groupMetadata }) {
 > ${descs}
 
 ❤️ 𝐃𝐢𝐬𝐟𝐫𝐮𝐭𝐚 𝐃𝐞𝐥 𝐆𝐫𝐮𝐩𝐨 𝐄𝐬𝐩𝐞𝐫𝐨 𝐪𝐮𝐞 𝐭𝐞 𝐠𝐮𝐬𝐭𝐞 
-`;
+╚══════════════════════════════╝`;
 
     await conn.sendMessage(m.chat, {
       image: img, // Envía la foto de perfil del usuario
@@ -140,12 +140,12 @@ export async function before(m, { conn, groupMetadata }) {
 ┏━━━━━❖━━━✦━━━❖━━━━━┓
 ┃🕊️ 𝐒𝐄 𝐅𝐔𝐄 𝐔𝐍 𝐌𝐈𝐄𝐌𝐁𝐑𝐎 🕊️
 ┗━━━━━❖━━━✦━━━❖━━━━━┛
-
+╔══════════════════════════════╗
 𝐀𝐝𝐢𝐨𝐬 𝐁𝐫𝐨𝐭 ${usuario}...
 
 🕊️ 𝐂𝐮𝐢𝐝𝐚𝐭𝐞 😇 
 ✨ 𝐄𝐥 𝐠𝐫𝐮𝐩𝐨 𝐞𝐬𝐭𝐚𝐫𝐚 𝐦𝐞𝐣𝐨𝐫 𝐬𝐢𝐧 𝐭𝐢 𝐜𝐫𝐞𝐨 𝐱𝐝 
-`;
+╚══════════════════════════════╝`;
 
     await conn.sendMessage(m.chat, {
       image: img, // Envía la foto de perfil del usuario
@@ -158,14 +158,14 @@ export async function before(m, { conn, groupMetadata }) {
 ┏━━━━━❖━━━✦━━━❖━━━━━┓
 ┃⛔ 𝐄𝐗𝐏𝐔𝐋𝐒𝐀𝐃𝐎 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 ⛔
 ┗━━━━━❖━━━✦━━━❖━━━━━┛
-
+╔════════════════════════════════════════╗
 ${usuario} 𝐅𝐮𝐞 𝐄𝐱𝐩𝐮𝐥𝐬𝐚𝐝𝐨 𝐀𝐡𝐬 𝐏𝐨𝐫 𝐌𝐦𝐠𝐯
 
 🥀 𝐍𝐮𝐧𝐜𝐚 𝐓𝐞 𝐐𝐮𝐢𝐬𝐢𝐦𝐨𝐬 𝐀𝐪𝐮𝐢 
 🚪 𝐍𝐨 𝐓𝐞 𝐐𝐮𝐞𝐫𝐞𝐦𝐨𝐬 𝐌𝐚𝐬 𝐎𝐡 𝐓𝐞 𝐦𝐚𝐧𝐝𝐚𝐦𝐨𝐬 𝐩𝐚𝐫𝐚 𝐬𝐨𝐩𝐨𝐫𝐭𝐞 𝐱𝐃
 
 ✨ 𝐏𝐨𝐫𝐟𝐢𝐧 𝐡𝐚𝐲 𝐩𝐚𝐳 𝐀 𝐃𝐢𝐬𝐟𝐫𝐮𝐭𝐚𝐫 ⭐
-`;
+╚════════════════════════════════════════╝`;
     await conn.sendMessage(m.chat, {
       image: img, // Envía la foto de perfil del usuario
       caption: textBan,
