@@ -25,7 +25,7 @@ let handler = async (m, { conn }) => {
 ╔═══[ 💬 Bienvenido ]═══╗
 ║ Hola, soy *${botName}*.
 ║ Moneda actual: ¥ ${currency}
-║ > Info completa: erenxsit.vercel.app
+║> Info completa: erenxsit.vercel.app
 ╚═════════════════════╝
 
 
