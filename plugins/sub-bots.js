@@ -18,13 +18,13 @@ let crm3 = "SBpbmZvLWRvbmFyLmpz"
 let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = "CkphZGlib3QsIEhlY2hv"
 let drm2 = "IHBvciBAQWlkZW5fTm90TG9naWM"
-let rtx = `*🔰 𝗔𝗟𝗬𝗔-𝗖𝗢𝗡𝗘𝗫𝗜𝗢𝗡 𝗦𝗨𝗕-𝗕𝗢𝗧  🔰*\nㅤㅤㅤㅤ*Ser sub bot*\n\n*Con otro telefono que tengas o en la PC escanea este QR para convertirte en un sub bot*\n\n*1. Haga clic en los tres puntos en la esquina superior derecha*\n*2. Toca WhatsApp Web*\n*3. Escanee este codigo QR*\n*Este código QR expira en 45 segundos!*\n\n> *⚠️ No nos hacemos responsable del mal uso que se le pueda dar o si el numero se manda a soporte.. ustedes tienen el deber se seguir al pie de la letra los terminos y condiciones*`
-let rtx2 = `🟢 𝘼𝙇𝙔𝘼-𝙎𝙐𝘽-𝘽𝙊𝙏 𝘾𝙊𝙉𝙀𝙓𝙄𝙊𝙉  🟢
+let rtx = `📡 𝗖𝗢𝗡𝗘𝗫𝗜𝗢𝗡 𝗦𝗨𝗕-𝗕𝗢𝗧 📡*\nㅤㅤㅤㅤ*Ser sub bot*\n\n*Con otro telefono que tengas o en la PC escanea este QR para convertirte en un sub bot*\n\n*1. Haga clic en los tres puntos en la esquina superior derecha*\n*2. Toca WhatsApp Web*\n*3. Escanee este codigo QR*\n*Este código QR expira en 45 segundos!*\n\n> *⚠️ No nos hacemos responsable del mal uso que se le pueda dar o si el numero se manda a soporte.. ustedes tienen el deber se seguir al pie de la letra los terminos y condiciones*`
+let rtx2 = `📡 𝙎𝙐𝘽-𝘽𝙊𝙏 𝘾𝙊𝙉𝙀𝙓𝙄𝙊𝙉  📡
 
-*1️⃣ Diríjase en los tres puntos en la esquina superior derecha*🟢
-*2️⃣ Ir a la opción Dispositivos vinculados*🟢
-*3️⃣ da click en vincular con codigo de teléfono*🟢
-*4️⃣ pega el codigo a continuación*🟢
+*1️⃣ Diríjase en los tres puntos en la esquina superior derecha*
+*2️⃣ Ir a la opción Dispositivos vinculados*
+*3️⃣ da click en vincular con codigo de teléfono*
+*4️⃣ pega el codigo a continuación*
 
 > *⚠️ No nos hacemos responsable del mal uso que se le pueda dar o si el numero se manda a soporte.. ustedes tienen el deber se seguir al pie de la letra los terminos y condiciones y privacidad (escribe eso y te los dará)*`
 
@@ -224,7 +224,7 @@ sock.isInit = true
 global.conns.push(sock)
 
 let user = global.db.data?.users[`${path.basename(pathGataJadiBot)}@s.whatsapp.net`]
-m?.chat ? await conn.sendMessage(m.chat, {text : args[0] ? `✅ Ya esta conectado!! Por favor espere se esta cargador los mensajes.....*` : `*Conectado exitosamente con WhatsApp ✅*\n\n*💻 Bot:* +${path.basename(pathGataJadiBot)}\n*👤 Dueño:*  ${userName}\n\n*Nota: Con la nueva función de auto-reinicio (Beta)*, Si el bot principal se reinicia o se desactiva, los sub-bots se reiniciarán automáticamente, asegurando que sigan activos sin interrupciones.\n\n> *Unirte a nuestro canal para informarte de todas la Actualizaciónes/novedades sobre el bot*`}, { quoted: m }) : ''
+m?.chat ? await conn.sendMessage(m.chat, {text : args[0] ? `✅ Ya esta conectado!! Por favor espere se esta cargador los mensajes.....*` : `*Conectado exitosamente con WhatsApp ✅*\n\n*💻 Bot:* +${path.basename(pathGataJadiBot)}\n*👤 Dueño:*  ${userName}\n\n*Nota: Con la nueva función de auto-reinicio (Beta)*, Si el bot principal se reinicia o se desactiva, los sub-bots se reiniciarán automáticamente, asegurando que sigan activos sin interrupciones.\n\n> *Unirte a nuestro canal para informarte de todas la Actualizaciónes/novedades sobre el bot*https://whatsapp.com/channel/0029VbBBn9R4NViep4KwCT3Z`}, { quoted: m }) : ''
 let chtxt = `*Se detectó un nuevo Sub-Bot conectado 💻✨*
 
 *✨ Bot :* wa.me/${path.basename(pathGataJadiBot)}
