@@ -5,7 +5,7 @@ const filePath = './personalize.json';
 // Datos predeterminados que se agregarán al archivo si no existe
 const defaultData = {
     default: {
-        botName: "ᰔᩚʀɪᴀsᴀɴ-ʙᴏᴛᴠ2ᰔᩚ",
+        botName: "𝑹𝑰𝑨𝑺𝑨𝑵-𝑩𝑶𝑻𝑽2",
         currency: "𝙔𝙚𝙣𝙚𝙨",
         videos: [
             "https://cdn.russellxz.click/94f38bba.mp4",
