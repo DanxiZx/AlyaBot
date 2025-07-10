@@ -56,7 +56,7 @@ let handler = async (m, { conn }) => {
 ║ 🧧 .claim — Reclamar
 ║ 💖 .harem — Mi harem
 ║ 📒 .addrw — Añadir waifu
-║ 🤖 .rias / .bot — Bot Info
+║ 🤖 .Rias / .bot — Bot Info
 ║ 🌸 .kaori — Estilo waifu
 ║ 🩷 .Waifu — Imagen Waifu
 ║ 💬 .fakengl — Texto Fake
