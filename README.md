@@ -1,14 +1,14 @@
-﻿<h1 align="center">❤️𝙍𝙄𝘼𝙎𝘼𝙉-𝙈𝘿❤️</h1>  
-<p align="center"><i>𝑺𝑼𝑷𝑬𝑹 𝑩𝑶𝑻 𝑺𝑰𝑴𝑷𝑳𝑬 𝑷𝑨𝑹𝑨 𝑻𝑰 🩷</i></p>
+﻿<h1 align="center">ʀɪᴀsᴀɴ-ʙᴏᴛV2</h1>  
+<p align="center"><i>sᴜᴘᴇʀ ʙᴏᴛ ᴀᴄᴛᴜᴀʟɪᴢᴀᴅᴀ ᴄᴏɴ ᴍᴜʟᴛɪғᴏɴᴄɪᴏɴ ʙʏ ᴇʀᴇɴxsᴢʏ 𒊹︎︎︎</i></p>
 
 <p align="center">
   <img src="https://files.catbox.moe/jgozag.jpg" width="700"/>
 </p>
 
 
-### ⚙️ Android (Termux)
+### > 𝙄𝙉𝙎𝙏𝘼𝙇𝘼𝘾𝙄𝙊𝙉 𝙀𝙉 𝙏𝙀𝙍𝙈𝙐𝙓 💠
 
-> 📲 Ideal para ejecutar el bot en dispositivos móviles. Copia y pega los comandos uno por uno
+> 💥 Ideal para ejecutar el bot en dispositivos móviles. Copia y pega los comandos uno por uno
 
 ```bash
 > pkg update && pkg upgrade
@@ -18,15 +18,15 @@
 > npm install
 > node index.js
 ```
-> 𝙲𝚘𝚖𝚊𝚗𝚍𝚘𝚜 𝚞𝚗𝚘𝚜 𝚙𝚘𝚛 𝚞𝚗𝚘 🌷
+> ᴏᴊᴏ ʟᴀ ʙᴏᴛ ɴᴏ ᴇs ғᴏɴᴄɪᴏɴᴀʟ ᴀʟ 100 ᴇɴ ᴛᴇʀᴍᴜx ᴘᴜᴇᴅᴇ sᴇʀ ǫᴜᴇ ᴇsᴛᴇ ʟᴇɴᴛᴀ ᴏ ǫᴜᴇ ʟᴀ ʙᴏᴛ ʀᴇsᴘᴏɴᴅᴇ ᴛᴀʀᴅᴇ 
 
 
-> ɴᴜᴇᴠᴀ ᴠᴇʀsɪᴏɴ ᴅɪsᴘᴏɴɪʙʟᴇ ᴘʀᴜʙᴀʟᴏ ᴀʟʏᴀ-ᴋᴜᴊᴏᴜ
+> ᴇsᴛᴇ ʙᴏᴛ ᴇsᴛᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ ᴅᴇ ᴄᴀᴍʙɪᴏ ʏ ᴍᴀs ᴄᴜᴀʟǫᴜɪᴇʀᴇ ɪɴғᴏᴍᴀᴄɪᴏɴ ᴀǫᴜɪ https://erenxsit.vercel.app
 
-> 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 3.3.0 ❤️
+> 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 2.0.0
 
 
-### **`🜸 Créditos el Mejor ❤️`**
+### **`𒊹︎︎︎ Créditos el Mejor 𒊹︎︎︎ `**
 <a href="https://github.com/Elpapiema" style="display:inline-block; text-decoration: none;">
     <img src="https://github.com/Elpapiema.png" width="130" height="130" alt="Alex-X" style="border-radius: 50%;"/>
 </a>
