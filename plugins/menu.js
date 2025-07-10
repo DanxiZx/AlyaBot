@@ -19,13 +19,13 @@ let handler = async (m, { conn }) => {
 ╔═══[ 🤖 ${botName} ]════╗
 ║ 🧑‍💻 Dev: ${dev}
 ║ 🧾 Versión: ${vs}
-║ ☁️ Sistema: Termux Nube
+║ ☁️ Sistema: servidor 
 ╚══════════════════════╝
 
 ╔═══[ 💬 Bienvenido ]═══╗
 ║ Hola, soy *${botName}*.
 ║ Moneda actual: ¥ ${currency}
-║ Info completa: erenxsit.vercel.app
+║ > Info completa: erenxsit.vercel.app
 ╚═════════════════════╝
 
 
@@ -49,52 +49,52 @@ let handler = async (m, { conn }) => {
 ║ 🎨 .Pinterest — Imagenes
 ╚════════════════════════╝
 
-╔═══[ 🎲 RANDOM FUN ]═══╗
+╔═══[🎲 𝙍𝘼𝙉𝘿𝙊𝙈 𝙓𝘿]═══╗
 ║ 🎴 .rw — Ruleta Waifu
 ║ 📌 .winfo — Info aleatoria
 ║ 🎟️ .rollwaifu — Roll waifu
 ║ 🧧 .claim — Reclamar
 ║ 💖 .harem — Mi harem
 ║ 📒 .addrw — Añadir waifu
-║ 🤖 .alya / .bot — Bot Info
+║ 🤖 .rias / .bot — Bot Info
 ║ 🌸 .kaori — Estilo waifu
 ║ 🩷 .Waifu — Imagen Waifu
 ║ 💬 .fakengl — Texto Fake
 ╚══════════════════════╝
 
-╔═══[ 📥 DESCARGAS ]═══╗
+╔═══[ 📥 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎 ]═══╗
 ║ 🎶 .playaudio — Audio MP3
 ║ 🎞️ .ytmp4 — YouTube Video
 ║ 🎬 .tt — TikTok Video
 ║ 🎧 .sp — Spotify Track
 ╚════════════════════╝
 
-╔═══[ 💰 ECONOMÍA ]═══╗
-║ 🧰 .work — Trabajar
-║ 😈 .slut — Riesgo
-║ 🥷 .robar — Robar
+╔═══[ 💰 𝙀𝘾𝙊𝙉𝙊𝙈𝙄𝘼 𝘽𝙀𝙏𝘼 ]═══╗
+║ 👩🏻‍🔧 .work — Trabajar
+║ 😏 .slut — Riesgo
+║ 🧟‍♂️ .robar — Robar
 ║ 🏦 .deposit — Depositar
 ║ 🏧 .retirar — Retirar
 ║ 💸 .transferir — Enviar
 ║ 🪪 .perfil — Perfil
 ╚════════════════════╝
 
-╔═══[ ⛩️ REACCIONES ]═══╗
-║ 🤗 .abrazar — Abrazar
-║ 🛁 .bañarse — Bañarse
-║ 🥱 .aburrido — Aburrido
-║ 🍙 .comer — Comer
-║ 💃 .dance — Bailar
-║ 😡 .enojado — Enojarse
-║ 😊 .feliz — Feliz
+╔═══[ ⛩️ 𝘼𝙉𝙄𝙈𝙀&𝙍𝙀𝘼𝘾𝙏 ]═══╗
+║ 💋 .abrazar — Abrazar
+║ 💋 .bañarse — Bañarse
+║ 💋 .aburrido — Aburrido
+║ 💋 .comer — Comer
+║ 💋 .dance — Bailar
+║ 💋 .enojado — Enojarse
+║ 💋 .feliz — Feliz
 ║ 💋 .kiss — Besar
-║ 🔪 .matar — Matar
-║ 👊 .punch — Golpear
-║ 🍑 .nalguear — Nalgada
-║ 🛌 .dormir — Dormir
+║ 💋 .matar — Matar
+║ 💋 .punch — Golpear
+║ 💋 .nalguear — Nalgada
+║ 💋 .dormir — Dormir
 ╚═════════════════════╝
 
-🔗 *${copy} Hecho con ❤️ por ${dev}*
+🚀 *${copy} ɪɴsᴘɪʀᴀᴅᴏ ᴘᴏʀ  ${dev}*
 
 `;
 
