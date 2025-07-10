@@ -1,21 +1,24 @@
 const handler = async (m, { conn, text, participants, quoted, isAdmin }) => {
     const groupMetadata = await conn.groupMetadata(m.chat);
     const groupParticipants = groupMetadata.participants;
-    const groupAdmins = groupParticipants
-        .filter(p => p.admin === 'admin' || p.admin === 'superadmin')
-        .map(p => p.id);
 
-    // Obtener el ID del bot en formato correcto
-    const botNumber = conn.decodeJid(conn.user.id);
+    // Obtener ID del bot y normalizarlo
+    const botNumber = conn.user?.id?.split(':')[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+
+    // Verificar si el bot es admin
     const botInGroup = groupParticipants.find(p => p.id === botNumber);
     const isBotAdmin = botInGroup?.admin === 'admin' || botInGroup?.admin === 'superadmin';
+
+    // Logs opcionales para depurar
+    console.log('BOT ID:', botNumber);
+    console.log('BOT ES ADMIN:', isBotAdmin);
 
     if (!isAdmin) {
         return m.reply('❌ Este comando es solo para administradores del grupo.');
     }
 
     if (!isBotAdmin) {
-        return m.reply('❌ El bot necesita ser administrador para usar este comando.');
+        return m.reply('❌ El bot necesita ser administrador para ejecutar este comando.');
     }
 
     // Obtener usuario objetivo
@@ -30,17 +33,17 @@ const handler = async (m, { conn, text, participants, quoted, isAdmin }) => {
         return m.reply('❌ Menciona, responde o escribe el número del usuario para expulsarlo.');
     }
 
-    const isMember = groupParticipants.some(p => p.id === target);
-    if (!isMember) return m.reply('❌ El usuario no está en el grupo.');
-    if (groupAdmins.includes(target)) return m.reply('❌ No puedes expulsar a otro administrador.');
+    // Validar si está en el grupo
+    const targetInGroup = groupParticipants.find(p => p.id === target);
+    if (!targetInGroup) return m.reply('❌ El usuario no está en el grupo.');
+    if (targetInGroup.admin) return m.reply('❌ No puedes expulsar a un administrador.');
 
+    // Expulsar
     try {
         await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
-        m.reply(`✅ El usuario @${target.split('@')[0]} ha sido expulsado.`, null, {
-            mentions: [target]
-        });
+        await m.reply(`✅ Usuario @${target.split('@')[0]} expulsado.`, null, { mentions: [target] });
     } catch (err) {
-        m.reply(`❌ Error al expulsar: ${err.message}`);
+        m.reply(`❌ No se pudo expulsar: ${err.message}`);
     }
 };
 
