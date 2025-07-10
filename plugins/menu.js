@@ -16,14 +16,14 @@ let handler = async (m, { conn }) => {
 
         const menuMessage = `
 
-╔═══[ 🤖 ${botName} ]════╗
+╔═══[ 🤖 *RiasanBotv2* ]════╗
 ║ 🧑‍💻 Dev: ${dev}
 ║ 🧾 Versión: ${vs}
 ║ ☁️ Sistema: servidor 
 ╚══════════════════════╝
 
 ╔═══[ 💬 Bienvenido ]═══╗
-║ Hola, soy *${botName}*.
+║ Hola, soy *RiasanBotv2*.
 ║ Moneda actual: ¥ ${currency}
 ║ Info completa: erenxsit.vercel.app
 ╚═════════════════════╝
