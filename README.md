@@ -13,7 +13,7 @@
 ```bash
  pkg update && pkg upgrade
  pkg install git nodejs ffmpeg imagemagick -y
- git clone https://github.com/DanxiZx/AlyaKoujouBot
+ git clone https://github.com/erenxzy/RiasanBotv2
  cd AlyaKoujouBot 
  npm install
  node index.js
@@ -24,9 +24,3 @@
 > 𝘌𝘴𝘵𝘢 𝘉𝘰𝘵 𝘦𝘴𝘵𝘢 𝘦𝘯 𝘗𝘳𝘰𝘤𝘦𝘴𝘰 𝘋𝘦 𝘊𝘢𝘮𝘣𝘪𝘰 𝘠 𝘔𝘢𝘴 𝘚𝘪 𝘵𝘦 𝘪𝘯𝘵𝘦𝘳𝘦𝘴𝘢 𝘜𝘯 𝘉𝘰𝘵 𝘱𝘦𝘳𝘴𝘰𝘯𝘢𝘭𝘪𝘻𝘢𝘥𝘰 𝘮𝘢𝘴 𝘪𝘯𝘧𝘰 𝘢𝘲𝘶𝘪 👉🏻 https://erenxsit.vercel.app
 
 > 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 2.0.0
-
-
-### **`𒊹︎︎︎ Créditos el Mejor 𒊹︎︎︎ `**
-<a href="https://github.com/Elpapiema" style="display:inline-block; text-decoration: none;">
-    <img src="https://github.com/Elpapiema.png" width="130" height="130" alt="Alex-X" style="border-radius: 50%;"/>
-</a>
