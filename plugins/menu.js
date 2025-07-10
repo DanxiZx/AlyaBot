@@ -33,16 +33,16 @@ let handler = async (m, { conn }) => {
     }
 
     // 🧾 Construcción del menú
-    let menu = `╭━━〔 🤖 *${botName}* 〕━━⬣
+    let menu = `╭━━〔 🤖 ʀɪᴀsᴀɴʙᴏᴛᴠ2 〕━━⬣
 ┃👑 *Developer:* ${dev}
-┃📦 *Versión:* ${vs}
-┃💸 *Moneda:* ${currency}
+┃☄️ *Versión:* ${vs}
+┃🪙 *Moneda:* ${currency}
 ╰━━━━━━━━━━━━━━━⬣\n\n`;
 
     for (const [tag, cmds] of Object.entries(categorized)) {
-      menu += `╭━━〔 📂 *${tag.toUpperCase()}* 〕━━⬣\n`;
+      menu += `╭━━〔 🌠 *${tag.toUpperCase()}* 〕━━⬣\n`;
       for (const cmd of cmds) {
-        menu += `┃➤ ${cmd}\n`;
+        menu += `┃✎ ${cmd}\n`;
       }
       menu += `╰━━━━━━━━━━━━━━━⬣\n\n`;
     }
