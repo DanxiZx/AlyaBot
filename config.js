@@ -16,7 +16,7 @@ global.owner = [
 ]
 
 global.lidOwners = [
-  ['128514011471987'],
+  ['31375424024748'],
   // ['31375424024748'] // Segundo owner (opcional)
   // ['50489513153'] // Tercer owner (opcional)
 ]
