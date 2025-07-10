@@ -1,61 +1,48 @@
-import axios from 'axios';
-const {
-  generateWAMessageContent,
-  generateWAMessageFromContent,
-  proto
-} = (await import("@whiskeysockets/baileys"))["default"];
+import axios from 'axios'
+import baileys from '@whiskeysockets/baileys'
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, "❀ 𝐏𝐨𝐫𝐟𝐚𝐯𝐨𝐫 𝐈𝐧𝐠𝐫𝐞𝐬𝐚 𝐋𝐨 𝐐𝐮𝐞 𝐐𝐮𝐢𝐞𝐫𝐞𝐬 𝐁𝐮𝐬𝐜𝐚𝐫 𝐞𝐧 𝐏𝐢𝐧𝐭𝐞𝐫𝐞𝐬𝐭 🔍", m);
-  let query = text + " ʜᴅ";
-  await m.react("⏳");
-  conn.reply(m.chat, '💛 𝑬𝒔𝒑𝒆𝒓𝒂 𝒖𝒏 𝒎𝒐𝒎𝒆𝒏𝒕𝒐 𝒆𝒔𝒕𝒐𝒚 𝒅𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒏𝒅𝒐 𝑻𝒖𝒔 𝑰𝒎𝒂𝒈𝒆𝒏 ⭐...', m);
+let handler = async (m, { conn, text }) => {
+  if (!text) return m.reply(`❀ Por favor, ingresa lo que deseas buscar por Pinterest.`)
+
   try {
-    let { data } = await axios.get(`https://api.dorratz.com/v2/pinterest?q=${encodeURIComponent(query)}`);
-    let images = data.slice(0, 6).map(item => item.image_large_url);
-    let cards = [];
-    let counter = 1;
-    for (let url of images) {
-      const { imageMessage } = await generateWAMessageContent({ image: { url } }, { upload: conn.waUploadToServer });
-      cards.push({
-        body: proto.Message.InteractiveMessage.Body.fromObject({ text: `Imagen - ${counter++}` }),
-        footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "Pinterest HD" }),
-        header: proto.Message.InteractiveMessage.Header.fromObject({ title: '', hasMediaAttachment: true, imageMessage }),
-        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-          buttons: [{
-            name: "cta_url",
-            buttonParamsJson: JSON.stringify({
-              display_text: "Ver en Pinterest",
-              Url: `https://www.pinterest.com/search/pins/?q=${encodeURIComponent(query)}`,
-              merchant_url: `https://www.pinterest.com/search/pins/?q=${encodeURIComponent(query)}`
-            })
-          }]
-        })
-      });
-    }
-    const messageContent = generateWAMessageFromContent(m.chat, {
-      viewOnceMessage: {
-        message: {
-          messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
-          interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-            body: proto.Message.InteractiveMessage.Body.create({ text: `📄 ʀᴇsᴜʟᴛᴀᴅᴏ ᴅᴇ : ${query}` }),
-            footer: proto.Message.InteractiveMessage.Footer.create({ text: "𝙋𝙄𝙉𝙏𝙀𝙍𝙀𝙎𝙏 𝙃𝘿 𝘽𝙔 𝘼𝙇𝙔𝘼𝙆𝙊𝙐𝙅𝙊𝙐-𝘽𝙊𝙏" }),
-            header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
-            carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards })
-          })
-        }
-      }
-    }, { quoted: m });
-    await m.react("✅");
-    await conn.relayMessage(m.chat, messageContent.message, { messageId: messageContent.key.id });
+    m.react('🕒')
+    let results = await pins(text)
+
+    if (!results.length) return conn.reply(m.chat, `✧ No se encontraron resultados para "${text}".`, m)
+
+    const medias = results.slice(0, 10).map(img => ({ type: 'image', data: { url: img.hd } }))
+
+    await conn.sendSylphy(m.chat, medias, {
+      caption: `❀  Pinterest  -  Search  ❀\n\n✧ Búsqueda » "${text}"\n✐ Resultados » ${medias.length}\n\n${dev}`,
+      quoted: m
+    })
+
+    await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
   } catch (error) {
-    console.error(error);
-    return conn.reply(m.chat, "Ocurrió un error al buscar las imágenes.", m);
+    conn.reply(m.chat, `⚠︎ Error:\n\n${error.message}`, m)
   }
-};
+}
 
-handler.help = ["pinterest"];
-handler.tags = ["descargas"];
-handler.command = ['pinterest', 'pin'];
+handler.help = ['pinterest']
+handler.command = ['pinterest', 'pin']
+handler.tags = ['dl']
 
-export default handler;
+export default handler
+
+const pins = async (query) => {
+  try {
+    const { data } = await axios.get(`https://api.stellarwa.xyz/search/pinterest?query=${query}`)
+
+    if (data?.status && data?.data?.length) {
+      return data.data.map(item => ({
+        hd: item.hd,
+        mini: item.mini
+      }))
+    }
+
+    return []
+  } catch (error) {
+    console.error("Error al obtener imágenes de Pinterest:", error)
+    return []
+  }
+}
