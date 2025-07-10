@@ -1,116 +1,69 @@
 import fs from 'fs';
+import path from 'path';
+import { readdirSync } from 'fs';
 
 const filePath = './personalize.json';
+const pluginFolder = './plugins'; // Cambia si tu carpeta es diferente
 
 let handler = async (m, { conn }) => {
-    try {
-        const data = JSON.parse(fs.readFileSync(filePath));
+  try {
+    const data = JSON.parse(fs.readFileSync(filePath));
+    const globalConfig = data.global || {};
+    const defaultConfig = data.default || {};
 
-        const globalConfig = data.global;
-        const defaultConfig = data.default;
+    const botName = globalConfig.botName || defaultConfig.botName || 'RiasanBotv2';
+    const dev = globalConfig.dev || defaultConfig.dev || 'erenxsit';
+    const vs = globalConfig.version || defaultConfig.version || '1.0.0';
+    const currency = globalConfig.currency || defaultConfig.currency || '¥';
+    const videos = globalConfig.videos?.length ? globalConfig.videos : defaultConfig.videos || [];
+    const copy = globalConfig.copy || defaultConfig.copy || 'RiasanTeam';
+    const randomVideoUrl = videos[Math.floor(Math.random() * videos.length)] || 'https://telegra.ph/file/9c84e6cb7d6e45cfbe69b.mp4';
 
-        const botName = globalConfig.botName || defaultConfig.botName;
-        const currency = globalConfig.currency || defaultConfig.currency;
-        const videos = globalConfig.videos.length > 0 ? globalConfig.videos : defaultConfig.videos;
-        const randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
+    // 🔍 Detecta automáticamente los plugins
+    const categories = {};
+    const files = readdirSync(pluginFolder).filter(file => file.endsWith('.js'));
 
-        const menuMessage = `
+    for (const file of files) {
+      const plugin = await import(path.resolve(pluginFolder, file));
+      const tags = plugin.default?.tags || [];
+      const commands = Array.isArray(plugin.default?.command) ? plugin.default.command : [plugin.default?.command];
+      const help = plugin.default?.help || commands.map(c => `.${c}`);
 
-╔═══[ 🤖 *RiasanBotv2* ]════╗
-║ 🧑‍💻 Dev: ${dev}
-║ 🧾 Versión: ${vs}
-║ ☁️ Sistema: servidor 
-╚══════════════════════╝
-
-╔═══[ 💬 Bienvenido ]═══╗
-║ Hola, soy *RiasanBotv2*.
-║ Moneda actual: ¥ ${currency}
-║ Info completa: erenxsit.vercel.app
-╚═════════════════════╝
-
-
-╔═══[ 👑 SOLO CREADOR ]═══╗
-║ ⚙️ .setname — Cambiar nombre
-║ 🖼️ .setbanner — Definir banner
-║ 💱 .setmoneda — Moneda bot
-║ 📋 .viewbanner — Ver banner
-║ 🗑️ .deletebanner — Eliminar
-║ 🔁 .resetpreferences — Reset
-╚═══════════════════════╝
-
-╔═══[ 🛡️ ADMINISTRACIÓN ]═══╗
-║ 🚫 .kick — Expulsar
-║ 📂 .getplugin — Plugin local
-║ 📦 .getpack — Paquete ZIP
-║ 🏪 .store — Tienda
-║ 🖥️ .status — Estado bot
-║ 📍 .ping — Ping
-║ 🧠 .gemini — IA Gemini
-║ 🎨 .Pinterest — Imagenes
-╚════════════════════════╝
-
-╔═══[🎲 𝙍𝘼𝙉𝘿𝙊𝙈 𝙓𝘿]═══╗
-║ 🎴 .rw — Ruleta Waifu
-║ 📌 .winfo — Info aleatoria
-║ 🎟️ .rollwaifu — Roll waifu
-║ 🧧 .claim — Reclamar
-║ 💖 .harem — Mi harem
-║ 📒 .addrw — Añadir waifu
-║ 🤖 .Rias / .bot — Bot Info
-║ 🌸 .kaori — Estilo waifu
-║ 🩷 .Waifu — Imagen Waifu
-║ 💬 .fakengl — Texto Fake
-║ 🍟 .lolice  – imagen Fake
-╚══════════════════════╝
-
-╔═══[ 📥 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎 ]═══╗
-║ 🎶 .playaudio — Audio MP3
-║ 🎞️ .ytmp4 — YouTube Video
-║ 🎬 .tt — TikTok Video
-║ 🎧 .sp — Spotify Track
-╚════════════════════╝
-
-╔═══[ 💰 𝙀𝘾𝙊𝙉𝙊𝙈𝙄𝘼 𝘽𝙀𝙏𝘼 ]═══╗
-║ 👩🏻‍🔧 .work — Trabajar
-║ 😏 .slut — Riesgo
-║ 🧟‍♂️ .robar — Robar
-║ 🏦 .deposit — Depositar
-║ 🏧 .retirar — Retirar
-║ 💸 .transferir — Enviar
-║ 🪪 .perfil — Perfil
-╚════════════════════╝
-
-╔═══[ ⛩️ 𝘼𝙉𝙄𝙈𝙀&𝙍𝙀𝘼𝘾𝙏 ]═══╗
-║ 💋 .abrazar — Abrazar
-║ 💋 .bañarse — Bañarse
-║ 💋 .aburrido — Aburrido
-║ 💋 .comer — Comer
-║ 💋 .dance — Bailar
-║ 💋 .enojado — Enojarse
-║ 💋 .feliz — Feliz
-║ 💋 .kiss — Besar
-║ 💋 .matar — Matar
-║ 💋 .punch — Golpear
-║ 💋 .nalguear — Nalgada
-║ 💋 .dormir — Dormir
-╚═════════════════════╝
-
-🚀 *${copy} ɪɴsᴘɪʀᴀᴅᴏ ᴘᴏʀ  ${dev}*
-
-`;
-
-        await conn.sendMessage(
-            m.chat,
-            {
-                video: { url: randomVideoUrl },
-                gifPlayback: true,
-                caption: menuMessage,
-                mentions: [m.sender]
-            }
-        );
-    } catch (error) {
-        conn.reply(m.chat, `❌ Error al cargar el menú: ${error.message}`, m);
+      for (const tag of tags) {
+        if (!categories[tag]) categories[tag] = [];
+        categories[tag].push(...help);
+      }
     }
+
+    // ✨ Crea el cuerpo del menú dinámico
+    let menuContent = `╭━━〔 🤖 *${botName}* 〕━━⬣
+┃👑 *Developer:* ${dev}
+┃📦 *Versión:* ${vs}
+┃💸 *Moneda:* ${currency}
+╰━━━━━━━━━━━━━━━⬣\n\n`;
+
+    for (const [tag, cmds] of Object.entries(categories)) {
+      menuContent += `╭━━〔 📂 *${tag.toUpperCase()}* 〕━━⬣\n`;
+      cmds.forEach(cmd => {
+        menuContent += `┃➤ ${cmd}\n`;
+      });
+      menuContent += `╰━━━━━━━━━━━━━━━⬣\n\n`;
+    }
+
+    menuContent += `🔖 *${copy} — By ${dev}*`;
+
+    // 📽️ Envía el menú como video decorado
+    await conn.sendMessage(m.chat, {
+      video: { url: randomVideoUrl },
+      gifPlayback: true,
+      caption: menuContent,
+      mentions: [m.sender]
+    });
+
+  } catch (err) {
+    console.error(err);
+    conn.reply(m.chat, `❌ Error al cargar el menú: ${err.message}`, m);
+  }
 };
 
 handler.help = ['menu'];
