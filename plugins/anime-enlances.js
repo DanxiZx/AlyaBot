@@ -16,14 +16,12 @@ conn.reply(m.chat, `
 ┃ ❖ https://pendekarsubs.us
 ┃ ❖ https://myanimelist.net
 ┗━━━━━━━━━━━━━━━━━━━━┅
- `, m, rcanal, )
+ '
 
 handler.help = ['animelink']
 handler.tags = ['anime']
 handler.command = ['animelink']
 
-handler.eatrellas = 1
 handler.group = true;
-handler.register = true
 
 export default handler 
