@@ -22,8 +22,8 @@ Aunque su poder es temido y respetado, su verdadera fuerza radica en su lealtad 
 
     const reply = result.data || 'No recibí ninguna respuesta de Alya.';
 
-    // URL de una imagen de Alya Mikhailovna Kujou
-    const imageUrl = 'https://files.catbox.moe/fmuxis.png'; 
+    // URL de una imagen de RiasGremory
+    const imageUrl = 'https://files.catbox.moe/2jlpsq.png'; 
 
     // Descargar la imagen
     const imageBuffer = await (await fetch(imageUrl)).buffer();
@@ -42,7 +42,7 @@ Aunque su poder es temido y respetado, su verdadera fuerza radica en su lealtad 
   }
 };
 
-handler.command = ['alya', 'bot'];
+handler.command = ['rias', 'bot'];
 
 export default handler;
 
