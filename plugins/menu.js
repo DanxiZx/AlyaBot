@@ -34,8 +34,8 @@ let handler = async (m, { conn }) => {
 
     // 🧾 Construcción del menú
     let menu = `╭━━〔 🤖 ʀɪᴀsᴀɴʙᴏᴛᴠ2 〕━━⬣
-┃👑 *Developer:* ${dev}
-┃☄️ *Versión:* ${vs}
+┃🥷🏼 *Developer:* ${dev}
+┃☄️ *Versión:* 2.0.0
 ┃🪙 *Moneda:* ${currency}
 ╰━━━━━━━━━━━━━━━⬣\n\n`;
 
@@ -47,7 +47,7 @@ let handler = async (m, { conn }) => {
       menu += `╰━━━━━━━━━━━━━━━⬣\n\n`;
     }
 
-    menu += `🔖 *${copy} — By ${dev}*`;
+    menu += `☄️ *${copy} — By ${dev}*`;
 
     // 📤 Envío como video decorado
     await conn.sendMessage(m.chat, {
