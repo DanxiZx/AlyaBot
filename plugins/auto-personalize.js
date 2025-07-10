@@ -8,9 +8,9 @@ const defaultData = {
         botName: "ᰔᩚʀɪᴀsᴀɴ-ʙᴏᴛᴠ2ᰔᩚ",
         currency: "𝙔𝙚𝙣𝙚𝙨",
         videos: [
-            "https://files.catbox.moe/k4yscp.mp4",
-            "https://files.catbox.moe/k4yscp.mp4",
-            "https://files.catbox.moe/k4yscp.mp4"
+            "https://cdn.russellxz.click/94f38bba.mp4",
+            "https://cdn.russellxz.click/94f38bba.mp4",
+            "https://cdn.russellxz.click/94f38bba.mp4"
         ]
     },
     global: {
