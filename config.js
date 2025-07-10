@@ -11,14 +11,14 @@ import moment from 'moment-timezone'
 
 global.owner = [
   ['18493907272', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 |', true], // Owner principal
-  ['00000000000', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 𝟮 |', true], // Segundo owner (reemplazar)
+  ['50489513153', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 𝟮 |', true], // Segundo owner (reemplazar)
   ['00000000000', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 𝟯 |', true]  // Tercer owner (reemplazar)
 ]
 
 global.lidOwners = [
-  ['+128514011471987'],
-  // ['+000000000000000'] // Segundo owner (opcional)
-  // ['+000000000000000'] // Tercer owner (opcional)
+  ['128514011471987'],
+  // ['31375424024748'] // Segundo owner (opcional)
+  // ['50489513153'] // Tercer owner (opcional)
 ]
 
 global.mods = []
