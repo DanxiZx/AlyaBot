@@ -81,17 +81,17 @@ global.moment = moment
 
 //------------------------[ Stickers ]-----------------------------
 
-global.packname = '𝙰𝙻𝚈𝙰-𝚂𝚃𝙺 💗'
-global.author = '𝙴𝚁𝙴𝙽𝚇𝚂-𝚅𝙴𝚁𝚂𝙸𝙾𝙽'
+global.packname = 'ʀɪᴀsᴀɴʙᴏᴛᴠ2'
+global.author = 'ᴇʀᴇɴxsxᴢʏ'
 
 //------------[ Versión | Nombre  ]------------
 
 // Cambia por el nombre de tu bot
 
-global.wm = '𝐀𝐋𝐘𝐀𝐊𝐔𝐉𝐎𝐔-𝐁𝐎𝐓' 
-global.botname = '𝗔𝗟𝗬𝗔𝗞𝗨𝗝𝗢𝗨-𝗕𝗢𝗧'
-global.vs = '3.3.0'
-global.dev = 'ᴇᴄʜᴏ ᴘᴏʀ | ᴇʀᴇɴxs-ᴠᴇʀsɪᴏɴ'
+global.wm = 'ʀɪᴀsᴀɴʙᴏᴛᴠ2-ʙᴇᴛᴀ' 
+global.botname = 'ʀɪᴀsᴀɴʙᴏᴛᴠ2'
+global.vs = '2.0.0'
+global.dev = ' ʙʏ | ᴇʀᴇɴxs-ᴍᴅғ'
 global.copy = '⍟ 2025'
 
 //----------------------------[ NIVELES | RPG ]---------------------------------
@@ -102,7 +102,7 @@ global.maxwarn = '4' // máxima advertencias
 //━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
 global.rwait = '⌛'
-global.dmoji = '💗'
+global.dmoji = '💋'
 global.done = '✅'
 global.error = '❌' 
 global.xmoji = '🫣' 
