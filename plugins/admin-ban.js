@@ -1,50 +1,45 @@
-const handler = async (m, { conn, text, participants, quoted, isAdmin }) => {
-    const groupMetadata = await conn.groupMetadata(m.chat);
-    const groupParticipants = groupMetadata.participants;
+const handler = async (m, { conn, text, quoted, participants, isAdmin }) => {
+  const groupMetadata = await conn.groupMetadata(m.chat);
+  const groupParticipants = groupMetadata.participants;
+  const groupAdmins = groupParticipants.filter(p => p.admin).map(p => p.id);
 
-    // Obtener ID del bot y normalizarlo
-    const botNumber = conn.user?.id?.split(':')[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+  // ✅ Detectar correctamente el ID del bot
+  const botId = conn.user?.id?.split(':')[0] + '@s.whatsapp.net';
+  const botData = groupParticipants.find(p => p.id === botId);
+  const isBotAdmin = botData?.admin === 'admin' || botData?.admin === 'superadmin';
 
-    // Verificar si el bot es admin
-    const botInGroup = groupParticipants.find(p => p.id === botNumber);
-    const isBotAdmin = botInGroup?.admin === 'admin' || botInGroup?.admin === 'superadmin';
+  console.log('BOT ID:', botId);
+  console.log('¿Bot es admin?:', isBotAdmin);
 
-    // Logs opcionales para depurar
-    console.log('BOT ID:', botNumber);
-    console.log('BOT ES ADMIN:', isBotAdmin);
+  if (!isAdmin) {
+    return m.reply('❌ Este comando es solo para administradores.');
+  }
 
-    if (!isAdmin) {
-        return m.reply('❌ Este comando es solo para administradores del grupo.');
-    }
+  if (!isBotAdmin) {
+    return m.reply('❌ El bot necesita ser administrador del grupo.');
+  }
 
-    if (!isBotAdmin) {
-        return m.reply('❌ El bot necesita ser administrador para ejecutar este comando.');
-    }
+  let target;
+  if (m.mentionedJid?.length) {
+    target = m.mentionedJid[0];
+  } else if (quoted) {
+    target = quoted.sender;
+  } else if (text) {
+    target = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
+  } else {
+    return m.reply('❌ Menciona, responde o escribe el número del usuario a expulsar.');
+  }
 
-    // Obtener usuario objetivo
-    let target;
-    if (m.mentionedJid?.length) {
-        target = m.mentionedJid[0];
-    } else if (quoted) {
-        target = quoted.sender;
-    } else if (text) {
-        target = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-    } else {
-        return m.reply('❌ Menciona, responde o escribe el número del usuario para expulsarlo.');
-    }
+  const targetMember = groupParticipants.find(p => p.id === target);
+  if (!targetMember) return m.reply('❌ El usuario no está en el grupo.');
+  if (targetMember.admin) return m.reply('❌ No puedes expulsar a un administrador.');
 
-    // Validar si está en el grupo
-    const targetInGroup = groupParticipants.find(p => p.id === target);
-    if (!targetInGroup) return m.reply('❌ El usuario no está en el grupo.');
-    if (targetInGroup.admin) return m.reply('❌ No puedes expulsar a un administrador.');
-
-    // Expulsar
-    try {
-        await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
-        await m.reply(`✅ Usuario @${target.split('@')[0]} expulsado.`, null, { mentions: [target] });
-    } catch (err) {
-        m.reply(`❌ No se pudo expulsar: ${err.message}`);
-    }
+  try {
+    await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
+    await m.reply(`✅ Usuario @${target.split('@')[0]} expulsado.`, null, { mentions: [target] });
+  } catch (e) {
+    m.reply(`❌ Error al expulsar: ${e.message}`);
+  }
 };
 
 handler.command = /^(kick|ban)$/i;
