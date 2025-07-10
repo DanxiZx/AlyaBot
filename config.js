@@ -12,7 +12,7 @@ import moment from 'moment-timezone'
 global.owner = [
   ['18493907272', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 |', true], // Owner principal
   ['50489513153', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 𝟮 |', true], // Segundo owner (reemplazar)
-  ['00000000000', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 𝟯 |', true]  // Tercer owner (reemplazar)
+  ['1920437612698', '| 𝗣 𝗥 𝗢 𝗣 𝗜 𝗘 𝗧 𝗔 𝗥 𝗜 𝗢 𝟯 |', true]  // Tercer owner (reemplazar)
 ]
 
 global.lidOwners = [
