@@ -3,7 +3,7 @@ import path from 'path';
 import { readdirSync } from 'fs';
 
 const filePath = './personalize.json';
-const pluginFolder = './plugins'; // Cambia si tu carpeta es diferente
+const pluginFolder = './plugins'; // Cambia según la carpeta real de tus plugins
 
 let handler = async (m, { conn }) => {
   try {
@@ -17,17 +17,25 @@ let handler = async (m, { conn }) => {
     const currency = globalConfig.currency || defaultConfig.currency || '¥';
     const videos = globalConfig.videos?.length ? globalConfig.videos : defaultConfig.videos || [];
     const copy = globalConfig.copy || defaultConfig.copy || 'RiasanTeam';
-    const randomVideoUrl = videos[Math.floor(Math.random() * videos.length)] || 'https://telegra.ph/file/9c84e6cb7d6e45cfbe69b.mp4';
 
-    // 🔍 Detecta automáticamente los plugins
+    const randomVideoUrl = videos.length > 0
+      ? videos[Math.floor(Math.random() * videos.length)]
+      : 'https://telegra.ph/file/9c84e6cb7d6e45cfbe69b.mp4';
+
+    // 🔍 Cargar plugins
     const categories = {};
     const files = readdirSync(pluginFolder).filter(file => file.endsWith('.js'));
 
     for (const file of files) {
-      const plugin = await import(path.resolve(pluginFolder, file));
-      const tags = plugin.default?.tags || [];
-      const commands = Array.isArray(plugin.default?.command) ? plugin.default.command : [plugin.default?.command];
-      const help = plugin.default?.help || commands.map(c => `.${c}`);
+      const pluginPath = path.resolve(pluginFolder, file);
+      const pluginModule = await import(`file://${pluginPath}`);
+      const plugin = pluginModule.default;
+
+      if (!plugin || !plugin.command) continue;
+
+      const tags = Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags || 'otros'];
+      const commands = Array.isArray(plugin.command) ? plugin.command : [plugin.command];
+      const help = plugin.help || commands.map(cmd => `.${cmd}`);
 
       for (const tag of tags) {
         if (!categories[tag]) categories[tag] = [];
@@ -35,7 +43,7 @@ let handler = async (m, { conn }) => {
       }
     }
 
-    // ✨ Crea el cuerpo del menú dinámico
+    // 📜 Crear contenido del menú
     let menuContent = `╭━━〔 🤖 *${botName}* 〕━━⬣
 ┃👑 *Developer:* ${dev}
 ┃📦 *Versión:* ${vs}
@@ -44,15 +52,14 @@ let handler = async (m, { conn }) => {
 
     for (const [tag, cmds] of Object.entries(categories)) {
       menuContent += `╭━━〔 📂 *${tag.toUpperCase()}* 〕━━⬣\n`;
-      cmds.forEach(cmd => {
+      for (const cmd of cmds) {
         menuContent += `┃➤ ${cmd}\n`;
-      });
+      }
       menuContent += `╰━━━━━━━━━━━━━━━⬣\n\n`;
     }
 
     menuContent += `🔖 *${copy} — By ${dev}*`;
 
-    // 📽️ Envía el menú como video decorado
     await conn.sendMessage(m.chat, {
       video: { url: randomVideoUrl },
       gifPlayback: true,
