@@ -16,11 +16,12 @@ conn.reply(m.chat, `
 ┃ ❖ https://pendekarsubs.us
 ┃ ❖ https://myanimelist.net
 ┗━━━━━━━━━━━━━━━━━━━━┅
- '
+ `,
 
 handler.help = ['animelink']
 handler.tags = ['anime']
 handler.command = ['animelink']
+
 
 handler.group = true;
 
