@@ -1,9 +1,6 @@
 import fs from 'fs';
-import path from 'path';
-import { readdirSync } from 'fs';
 
 const filePath = './personalize.json';
-const pluginFolder = './plugins'; // Cambia según la carpeta real de tus plugins
 
 let handler = async (m, { conn }) => {
   try {
@@ -22,48 +19,41 @@ let handler = async (m, { conn }) => {
       ? videos[Math.floor(Math.random() * videos.length)]
       : 'https://telegra.ph/file/9c84e6cb7d6e45cfbe69b.mp4';
 
-    // 🔍 Cargar plugins
-    const categories = {};
-    const files = readdirSync(pluginFolder).filter(file => file.endsWith('.js'));
+    // ✅ Usa los plugins ya cargados en memoria (global.plugins)
+    const plugins = Object.values(global.plugins).filter(p => p?.help && p?.tags);
 
-    for (const file of files) {
-      const pluginPath = path.resolve(pluginFolder, file);
-      const pluginModule = await import(`file://${pluginPath}`);
-      const plugin = pluginModule.default;
-
-      if (!plugin || !plugin.command) continue;
-
-      const tags = Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags || 'otros'];
-      const commands = Array.isArray(plugin.command) ? plugin.command : [plugin.command];
-      const help = plugin.help || commands.map(cmd => `.${cmd}`);
-
-      for (const tag of tags) {
-        if (!categories[tag]) categories[tag] = [];
-        categories[tag].push(...help);
+    const categorized = {};
+    for (const plugin of plugins) {
+      for (const tag of plugin.tags) {
+        if (!categorized[tag]) categorized[tag] = [];
+        for (const helpText of plugin.help) {
+          categorized[tag].push(`.${helpText}`);
+        }
       }
     }
 
-    // 📜 Crear contenido del menú
-    let menuContent = `╭━━〔 🤖 *${botName}* 〕━━⬣
+    // 🧾 Construcción del menú
+    let menu = `╭━━〔 🤖 *${botName}* 〕━━⬣
 ┃👑 *Developer:* ${dev}
 ┃📦 *Versión:* ${vs}
 ┃💸 *Moneda:* ${currency}
 ╰━━━━━━━━━━━━━━━⬣\n\n`;
 
-    for (const [tag, cmds] of Object.entries(categories)) {
-      menuContent += `╭━━〔 📂 *${tag.toUpperCase()}* 〕━━⬣\n`;
+    for (const [tag, cmds] of Object.entries(categorized)) {
+      menu += `╭━━〔 📂 *${tag.toUpperCase()}* 〕━━⬣\n`;
       for (const cmd of cmds) {
-        menuContent += `┃➤ ${cmd}\n`;
+        menu += `┃➤ ${cmd}\n`;
       }
-      menuContent += `╰━━━━━━━━━━━━━━━⬣\n\n`;
+      menu += `╰━━━━━━━━━━━━━━━⬣\n\n`;
     }
 
-    menuContent += `🔖 *${copy} — By ${dev}*`;
+    menu += `🔖 *${copy} — By ${dev}*`;
 
+    // 📤 Envío como video decorado
     await conn.sendMessage(m.chat, {
       video: { url: randomVideoUrl },
       gifPlayback: true,
-      caption: menuContent,
+      caption: menu,
       mentions: [m.sender]
     });
 
