@@ -1,49 +1,19 @@
-const handler = async (m, { conn, text, quoted, participants, isAdmin }) => {
-  const groupMetadata = await conn.groupMetadata(m.chat);
-  const groupParticipants = groupMetadata.participants;
-  const groupAdmins = groupParticipants.filter(p => p.admin).map(p => p.id);
+let handler = async (m, { conn, participants, usedPrefix, command, isROwner }) => {
 
-  // ✅ Detectar correctamente el ID del bot
-  const botId = conn.user?.id?.split(':')[0] + '@s.whatsapp.net';
-  const botData = groupParticipants.find(p => p.id === botId);
-  const isBotAdmin = botData?.admin === 'admin' || botData?.admin === 'superadmin';
+let kickte = `_Menciona al usuario que deseas eliminar._`
 
-  console.log('BOT ID:', botId);
-  console.log('¿Bot es admin?:', isBotAdmin);
+if (!m.mentionedJid[0] && !m.quoted) return m.reply(kickte, m.chat, { mentions: conn.parseMention(kickte)}) 
+let user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
+let owr = m.chat.split`-`[0]
+await conn.groupParticipantsUpdate(m.chat, [user], 'remove')
+m.reply(`☠️ Instruso eliminado.`)
+}
 
-  if (!isAdmin) {
-    return m.reply('❌ Este comando es solo para administradores.');
-  }
+handler.help = ['kick @user']
+handler.tags = ['group']
+handler.command = ['kick', 'expulsar', 'eliminar'] 
+handler.admin = true
+handler.group = true
+handler.botAdmin = true
 
-  if (!isBotAdmin) {
-    return m.reply('❌ El bot necesita ser administrador del grupo.');
-  }
-
-  let target;
-  if (m.mentionedJid?.length) {
-    target = m.mentionedJid[0];
-  } else if (quoted) {
-    target = quoted.sender;
-  } else if (text) {
-    target = text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-  } else {
-    return m.reply('❌ Menciona, responde o escribe el número del usuario a expulsar.');
-  }
-
-  const targetMember = groupParticipants.find(p => p.id === target);
-  if (!targetMember) return m.reply('❌ El usuario no está en el grupo.');
-  if (targetMember.admin) return m.reply('❌ No puedes expulsar a un administrador.');
-
-  try {
-    await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
-    await m.reply(`✅ Usuario @${target.split('@')[0]} expulsado.`, null, { mentions: [target] });
-  } catch (e) {
-    m.reply(`❌ Error al expulsar: ${e.message}`);
-  }
-};
-
-handler.command = /^(kick|ban)$/i;
-handler.group = true;
-handler.admin = true;
-
-export default handler;
+export default handler
