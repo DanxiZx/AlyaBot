@@ -2,7 +2,7 @@
 <p align="center"><i>sᴜᴘᴇʀ ʙᴏᴛ ᴀᴄᴛᴜᴀʟɪᴢᴀᴅᴀ ᴄᴏɴ ᴍᴜʟᴛɪғᴏɴᴄɪᴏɴ ʙʏ ᴇʀᴇɴxsᴢʏ ♫︎</i></p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/eh1n6e.jpg" width="700"/>
+  <img src="https://files.catbox.moe/vlgja6.jpg" width="700"/>
 </p>
 
 
