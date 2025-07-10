@@ -5,12 +5,12 @@ const filePath = './personalize.json';
 // Datos predeterminados que se agregarán al archivo si no existe
 const defaultData = {
     default: {
-        botName: "𝘼𝙡𝙮𝙖𝙆𝙪𝙟𝙤𝙪𝘽𝙤𝙩💗",
-        currency: "𝙔𝙚𝙣𝙚𝙨💴",
+        botName: "ᰔᩚʀɪᴀsᴀɴ-ʙᴏᴛᴠ2ᰔᩚ",
+        currency: "𝙔𝙚𝙣𝙚𝙨",
         videos: [
-            "https://files.catbox.moe/2y26pq.mp4",
-            "https://files.catbox.moe/2y26pq.mp4",
-            "https://files.catbox.moe/2y26pq.mp4"
+            "https://files.catbox.moe/k4yscp.mp4",
+            "https://files.catbox.moe/k4yscp.mp4",
+            "https://files.catbox.moe/k4yscp.mp4"
         ]
     },
     global: {
