@@ -1,6 +1,6 @@
 
 
-#Este Bot Ya No Va A Resivir Más Actualizaciónes Ni Mantenimiento ♻️
+Este Bot Ya No Va A Resivir Más Actualizaciónes Ni Mantenimiento ♻️
 
 
 
