@@ -1,3 +1,9 @@
+
+
+#Este Bot Ya No Va A Resivir Más Actualizaciónes Ni Mantenimiento ♻️
+
+
+
 ﻿<h1 align="center">ʀɪᴀsᴀɴ-ʙᴏᴛV2</h1>  
 <p align="center"><i>sᴜᴘᴇʀ ʙᴏᴛ ᴀᴄᴛᴜᴀʟɪᴢᴀᴅᴀ ᴄᴏɴ ᴍᴜʟᴛɪғᴏɴᴄɪᴏɴ ʙʏ ᴇʀᴇɴxsᴢʏ ♫︎</i></p>
 
